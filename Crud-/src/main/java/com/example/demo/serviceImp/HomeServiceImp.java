@@ -38,6 +38,11 @@ public class HomeServiceImp implements HomeServiceI {
 		return hr.findAll();
 	}
 
+    @Override
+    public List<Employee> getEmployeesSortedBySalaryAsc() {
+        return hr.findAllByOrderBySalaryAsc();
+    }
+
 	@Override
 	public List<Employee> getEmpMaxSalary() {
 
@@ -49,5 +54,16 @@ public class HomeServiceImp implements HomeServiceI {
 		
 		return hr.findEmployeeWithLowSalary();
 	}
+
+    @Override
+    public List<Employee> getEmployeesSortedBySalaryDesc() {
+        return hr.findAllByOrderBySalaryDesc();
+    }
+
+@Override
+public Iterable<Employee> loginCheck(String un, String pass) {
+	return hr.findAllByUnameAndPassword(un, pass);
+}
+
 
 }
