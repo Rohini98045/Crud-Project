@@ -37,6 +37,7 @@ hs.deleteData(id);
 return "deleted successfully";
 }
 
+<<<<<<< HEAD
 
 
 	@GetMapping("/getAll")
@@ -54,9 +55,27 @@ return "deleted successfully";
 	return e;
 	}
 	}	
+=======
+	
+>>>>>>> branch 'main' of https://github.com/Rohini98045/Crud-Project.git
 	@PostMapping("/save")
 	public String postData(@RequestBody Employee e) {
 		hs.addEmployee(e);
 		return "Data Added Successfully";
 	}
+	
+	@GetMapping("/getAll")
+	public Iterable<Employee> getAllEmp(){
+		return hs.getAll();
+	}
+	
+    @GetMapping("/employees/sort/asc")
+    public List<Employee> getEmployeesSortedBySalaryAsc() {
+        return hs.getEmployeesSortedBySalaryAsc();
+    }
+
+    @GetMapping("/employees/sort/desc")
+    public List<Employee> getEmployeesSortedBySalaryDesc() {
+        return hs.getEmployeesSortedBySalaryDesc();
+    }
 }

@@ -1,5 +1,7 @@
 package com.example.demo.serviceImp;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,16 @@ public class HomeServiceImp  implements HomeServiceI{
 	public Iterable<Employee> getAll() {
 		return hr.findAll();
 	}
+	
+    @Override
+    public List<Employee> getEmployeesSortedBySalaryAsc() {
+        return hr.findAllByOrderBySalaryAsc();
+    }
+
+    @Override
+    public List<Employee> getEmployeesSortedBySalaryDesc() {
+        return hr.findAllByOrderBySalaryDesc();
+    }
 	
 	
 
