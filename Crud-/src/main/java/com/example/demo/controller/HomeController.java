@@ -23,7 +23,7 @@ public class HomeController {
 @Autowired
 HomeServiceI hs;
 
-@PutMapping("/update/{uid}")
+@PutMapping("/update/{eid}")
 public String update(@PathVariable("eid")int eid,@RequestBody Employee e) {
 hs.saveData(e);
 return "Update Success";		
