@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Employee;
 
+
 @Repository
 public interface HomeRepository extends CrudRepository<Employee, Integer>{
+
+
 
 }
