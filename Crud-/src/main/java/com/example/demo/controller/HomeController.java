@@ -2,8 +2,6 @@ package com.example.demo.controller;
 
 import java.util.List;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +22,6 @@ public class HomeController {
 	@Autowired
 	HomeServiceI hs;
 
-
 	@PutMapping("/update/{eid}")
 	public String update(@PathVariable("eid") int eid, @RequestBody Employee e) {
 		hs.saveData(e);
@@ -37,25 +34,21 @@ public class HomeController {
 		return "deleted successfully";
 	}
 
-
-
 	@GetMapping("/getAll")
 	public Iterable<Employee> getAllEmp() {
 		return hs.getAll();
 	}
 
 	@GetMapping("/loginCheck/{uname}/{password}")
-	public Iterable<Employee> loginCheck(@PathVariable("uname")String un,@PathVariable("password")String pass){
-	if(un.equalsIgnoreCase("admin")&&pass.equalsIgnoreCase("admin")) {
-	Iterable<Employee> l= hs.getAll();
-	return l;
+	public Iterable<Employee> loginCheck(@PathVariable("uname") String un, @PathVariable("password") String pass) {
+		if (un.equalsIgnoreCase("admin") && pass.equalsIgnoreCase("admin")) {
+			Iterable<Employee> l = hs.getAll();
+			return l;
+		} else {
+			Iterable<Employee> e = hs.loginCheck(un, pass);
+			return e;
+		}
 	}
-	else {
-	Iterable<Employee> e=hs.loginCheck(un, pass);
-	return e;
-	}
-	}	
-	
 
 	@PostMapping("/save")
 	public String postData(@RequestBody Employee e) {
@@ -63,35 +56,32 @@ public class HomeController {
 		return "Data Added Successfully";
 	}
 
-
-	
 	@GetMapping("/getMaxsalary")
 	public List<Employee> maxSalary() {
 
 		return hs.getEmpMaxSalary();
 	}
-	@GetMapping("/getMinsalary" )
+
+	@GetMapping("/getMinsalary")
 	public List<Employee> minSalary() {
 
 		return hs.getEmpMinSalary();
 	}
 
 	@GetMapping("/average")
-	public Iterable<Employee> aveSalary(){
-		
+	public Iterable<Employee> aveSalary() {
+
 		return hs.avrSal();
 	}
-	
-	
-	
-    @GetMapping("/employees/sort/asc")
-    public List<Employee> getEmployeesSortedBySalaryAsc() {
-        return hs.getEmployeesSortedBySalaryAsc();
-    }
 
-    @GetMapping("/employees/sort/desc")
-    public List<Employee> getEmployeesSortedBySalaryDesc() {
-        return hs.getEmployeesSortedBySalaryDesc();
-    }
+	@GetMapping("/employees/sort/asc")
+	public List<Employee> getEmployeesSortedBySalaryAsc() {
+		return hs.getEmployeesSortedBySalaryAsc();
+	}
+
+	@GetMapping("/employees/sort/desc")
+	public List<Employee> getEmployeesSortedBySalaryDesc() {
+		return hs.getEmployeesSortedBySalaryDesc();
+	}
 
 }
