@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+
 import com.example.demo.model.Employee;
 import com.example.demo.repository.HomeRepository;
 import com.example.demo.serviceI.HomeServiceI;
@@ -19,6 +20,15 @@ public class HomeServiceImp  implements HomeServiceI{
 		hr.save(e);
 		
 	}
+
+
+
+	@Override
+	public Iterable<Employee> getAll() {
+		return hr.findAll();
+	}
+	
+	
 
 @Override
 public void saveData(Employee e) {
