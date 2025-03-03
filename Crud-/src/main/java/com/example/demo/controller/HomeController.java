@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,19 +37,25 @@ hs.deleteData(id);
 return "deleted successfully";
 }
 
-
-
-	@GetMapping("/getAll")
-	public Iterable<Employee> getAllEmp(){
-		return hs.getAll();
-	}
-	
-	
-
 	
 	@PostMapping("/save")
 	public String postData(@RequestBody Employee e) {
 		hs.addEmployee(e);
 		return "Data Added Successfully";
 	}
+	
+	@GetMapping("/getAll")
+	public Iterable<Employee> getAllEmp(){
+		return hs.getAll();
+	}
+	
+    @GetMapping("/employees/sort/asc")
+    public List<Employee> getEmployeesSortedBySalaryAsc() {
+        return hs.getEmployeesSortedBySalaryAsc();
+    }
+
+    @GetMapping("/employees/sort/desc")
+    public List<Employee> getEmployeesSortedBySalaryDesc() {
+        return hs.getEmployeesSortedBySalaryDesc();
+    }
 }

@@ -2,7 +2,8 @@ package com.example.demo.serviceI;
 
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import com.example.demo.model.Employee;
 
 
@@ -12,6 +13,10 @@ public void saveData(Employee e);
 
 
 	Iterable<Employee> getAll();
+	
+    List<Employee> getEmployeesSortedBySalaryAsc();
+    
+    List<Employee> getEmployeesSortedBySalaryDesc();
 
 
 void addEmployee(Employee e);
