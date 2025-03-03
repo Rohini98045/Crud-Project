@@ -1,5 +1,7 @@
 package com.example.demo.serviceI;
 
-public interface HomeServiceI {
+import com.example.demo.model.Employee;
 
+public interface HomeServiceI  {
+void addEmployee(Employee e);
 }
