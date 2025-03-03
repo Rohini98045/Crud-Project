@@ -1,6 +1,8 @@
 package com.example.demo.serviceI;
 
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import com.example.demo.model.Employee;
 
 
@@ -11,4 +13,6 @@ public void saveData(Employee e);
 
 	Iterable<Employee> getAll();
 
+
+void addEmployee(Employee e);
 }
