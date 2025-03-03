@@ -23,6 +23,9 @@ public Iterable<Employee> findAllByUnameAndPassword(String uname,String password
     List<Employee> findAllByOrderBySalaryAsc();
     List<Employee> findAllByOrderBySalaryDesc();
 
+    @Query("SELECT AVG(e.salary) FROM Employee e")
+	Iterable<Employee> getAverageSalary();
+
 
 	
 }

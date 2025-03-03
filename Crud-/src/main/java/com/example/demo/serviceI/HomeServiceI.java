@@ -23,5 +23,6 @@ List<Employee> getEmpMaxSalary();
 List<Employee> getEmpMinSalary();
 
 public Iterable<Employee> loginCheck(String un,String pass);
+public Iterable<Employee> avrSal();
 
 }

@@ -76,6 +76,11 @@ public class HomeController {
 		return hs.getEmpMinSalary();
 	}
 
+	@GetMapping("/average")
+	public Iterable<Employee> aveSalary(){
+		
+		return hs.avrSal();
+	}
 	
 	
 	

@@ -65,5 +65,11 @@ public Iterable<Employee> loginCheck(String un, String pass) {
 	return hr.findAllByUnameAndPassword(un, pass);
 }
 
+@Override
+public Iterable<Employee> avrSal() {
+	// TODO Auto-generated method stub
+	return hr.getAverageSalary();
+}
+
 
 }
