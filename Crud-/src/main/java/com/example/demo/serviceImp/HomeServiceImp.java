@@ -37,7 +37,14 @@ public void saveData(Employee e) {
 @Override
 public void deleteData(int id) {
 hr.deleteById(id);
-	
+
+}
+
+
+
+@Override
+public Iterable<Employee> loginCheck(String un, String pass) {
+	return hr.findAllByUnameAndPassword(un, pass);
 }
 
 }

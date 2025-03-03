@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,10 +43,17 @@ return "deleted successfully";
 	public Iterable<Employee> getAllEmp(){
 		return hs.getAll();
 	}
-	
-	
-
-	
+	@GetMapping("/loginCheck/{uname}/{password}")
+	public Iterable<Employee> loginCheck(@PathVariable("uname")String un,@PathVariable("password")String pass){
+	if(un.equalsIgnoreCase("admin")&&pass.equalsIgnoreCase("admin")) {
+	Iterable<Employee> l= hs.getAll();
+	return l;
+	}
+	else {
+	Iterable<Employee> e=hs.loginCheck(un, pass);
+	return e;
+	}
+	}	
 	@PostMapping("/save")
 	public String postData(@RequestBody Employee e) {
 		hs.addEmployee(e);
