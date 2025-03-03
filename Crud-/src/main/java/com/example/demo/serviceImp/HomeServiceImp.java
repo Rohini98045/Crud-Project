@@ -9,9 +9,10 @@ import com.example.demo.serviceI.HomeServiceI;
 
 @Service
 public class HomeServiceImp  implements HomeServiceI{
+@Autowired
+HomeRepository hr;
 
-	@Autowired
-	HomeRepository hr;
+
 
 	@Override
 	public Iterable<Employee> getAll() {
@@ -19,4 +20,15 @@ public class HomeServiceImp  implements HomeServiceI{
 	}
 	
 	
+
+@Override
+public void saveData(Employee e) {
+	hr.save(e);
+}
+@Override
+public void deleteData(int id) {
+hr.deleteById(id);
+	
+}
+
 }
