@@ -1,5 +1,10 @@
 package com.example.demo.serviceI;
 
-public interface HomeServiceI {
+import org.springframework.beans.factory.annotation.Autowired;
 
+public interface HomeServiceI {
+	
+	
+	
+public void deleteData(int id);
 }
