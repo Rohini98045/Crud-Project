@@ -39,9 +39,6 @@ public class HomeServiceImp  implements HomeServiceI{
     public List<Employee> getEmployeesSortedBySalaryDesc() {
         return hr.findAllByOrderBySalaryDesc();
     }
-	
-	
-
 @Override
 public void saveData(Employee e) {
 	hr.save(e);
@@ -49,11 +46,7 @@ public void saveData(Employee e) {
 @Override
 public void deleteData(int id) {
 hr.deleteById(id);
-
 }
-
-
-
 @Override
 public Iterable<Employee> loginCheck(String un, String pass) {
 	return hr.findAllByUnameAndPassword(un, pass);

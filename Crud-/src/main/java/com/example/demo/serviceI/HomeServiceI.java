@@ -10,19 +10,9 @@ import com.example.demo.model.Employee;
 public interface HomeServiceI {	
 public void deleteData(int id);
 public void saveData(Employee e);
-<<<<<<< HEAD
-Iterable<Employee> getAll();
-=======
-
-
-	Iterable<Employee> getAll();
-	
-    List<Employee> getEmployeesSortedBySalaryAsc();
-    
-    List<Employee> getEmployeesSortedBySalaryDesc();
-
-
->>>>>>> branch 'main' of https://github.com/Rohini98045/Crud-Project.git
+Iterable<Employee> getAll();	
+List<Employee> getEmployeesSortedBySalaryAsc();
+List<Employee> getEmployeesSortedBySalaryDesc();
 void addEmployee(Employee e);
 public Iterable<Employee> loginCheck(String un,String pass);
 }

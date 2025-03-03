@@ -36,10 +36,6 @@ public String deleteData(@PathVariable("id")int id) {
 hs.deleteData(id);
 return "deleted successfully";
 }
-
-<<<<<<< HEAD
-
-
 	@GetMapping("/getAll")
 	public Iterable<Employee> getAllEmp(){
 		return hs.getAll();
@@ -55,19 +51,14 @@ return "deleted successfully";
 	return e;
 	}
 	}	
-=======
 	
->>>>>>> branch 'main' of https://github.com/Rohini98045/Crud-Project.git
 	@PostMapping("/save")
 	public String postData(@RequestBody Employee e) {
 		hs.addEmployee(e);
 		return "Data Added Successfully";
 	}
 	
-	@GetMapping("/getAll")
-	public Iterable<Employee> getAllEmp(){
-		return hs.getAll();
-	}
+	
 	
     @GetMapping("/employees/sort/asc")
     public List<Employee> getEmployeesSortedBySalaryAsc() {
